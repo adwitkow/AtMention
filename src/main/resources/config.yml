@@ -1,0 +1,30 @@
+# To use:
+#   - AQUA
+#   - BLACK
+#   - BLUE
+#   - DARK_AQUA
+#   - DARK_BLUE
+#   - DARK_GRAY
+#   - DARK_GREEN
+#   - DARK_PURPLE
+#   - DARK_RED
+#   - GOLD
+#   - GRAY
+#   - GREEN
+#   - LIGHT_PURPLE
+#   - RED
+#   - WHITE
+#   - YELLOW
+mention-color: "AQUA"
+
+mention-bold: false
+mention-italic: true
+mention-underline: false
+
+# Set true to set the description shown when hovering over mentioned player
+mention-suggest-command: true
+#in my case, results in nice "Click here to @Mention Quasindro!"
+mention-hover-description: "&7Click here to &b@Mention &e%mention%&7!"
+
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+mention-sound: "NOTE_PLING"

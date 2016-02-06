@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="AtMention:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/AtMention_jar</output-path>
+    <root id="archive" name="AtMention.jar">
+      <element id="module-output" name="AtMention" />
+    </root>
+  </artifact>
+</component>

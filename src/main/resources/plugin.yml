@@ -1,0 +1,6 @@
+main: me.quasindro.atmention.AtMention
+
+name: AtMention
+version: 1.0
+author: Quasindro
+description: Mention somebody in the chat! Poke 'em, highlight 'em!
