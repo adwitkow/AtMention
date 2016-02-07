@@ -21,7 +21,7 @@ public class AsyncChatListener implements Listener {
         String front = message.substring(0, message.indexOf("@"));
         String name = message.substring(message.indexOf("@") + 1, message.length());
 
-        int mentionedNameSpaceIndex = name.indexOf(" ") > -1 ? name.indexOf(" ") : name.length();
+        int mentionedNameSpaceIndex = name.contains(" ") ? name.indexOf(" ") : name.length();
         String back = name.substring(mentionedNameSpaceIndex, name.length());
         name = name.substring(0, mentionedNameSpaceIndex);
 
@@ -77,5 +77,6 @@ public class AsyncChatListener implements Listener {
         for (Player pl : e.getRecipients()) {
             pl.spigot().sendMessage(finalMessage);
         }
+        System.out.println(finalMessage.toPlainText());
     }
 }
