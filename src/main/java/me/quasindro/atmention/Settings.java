@@ -9,6 +9,8 @@ public class Settings {
 
     private static FileConfiguration config = AtMention.getPlugin().getConfig();
 
+    public static boolean USES_VAULT = true;
+
     public static final ChatColor CHAT_COLOR = chatColor();
     public static final boolean BOLD = config.getBoolean("mention-bold");
     public static final boolean ITALIC = config.getBoolean("mention-italic");
@@ -28,7 +30,7 @@ public class Settings {
         try {
             cc = ChatColor.valueOf(config.getString("mention-color"));
         } catch (IllegalArgumentException exception) {
-            Bukkit.getLogger().severe("@Mention is configured improperly! Defaulting to AQUA color.");
+            AtMention.getPlugin().getLogger().severe("Config.yml is configured improperly! Defaulting to AQUA color.");
             cc = ChatColor.AQUA;
         }
         return cc;
@@ -39,7 +41,7 @@ public class Settings {
         try {
             sound = Sound.valueOf(config.getString("mention-sound"));
         } catch (IllegalArgumentException exception) {
-            Bukkit.getLogger().severe("@Mention is configured improperly! Defaulting to NOTE_PLING sound.");
+            AtMention.getPlugin().getLogger().severe("Config.yml is configured improperly! Defaulting to NOTE_PLING sound.");
             sound = Sound.NOTE_PLING;
         }
         return sound;

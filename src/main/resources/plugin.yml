@@ -4,3 +4,4 @@ name: AtMention
 version: 1.0.1
 author: Quasindro
 description: Mention somebody in the chat! Poke 'em, highlight 'em!
+softdepend: [Vault]

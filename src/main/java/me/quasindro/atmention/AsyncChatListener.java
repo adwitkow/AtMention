@@ -1,5 +1,6 @@
 package me.quasindro.atmention;
 
+import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.*;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -9,6 +10,12 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
 public class AsyncChatListener implements Listener {
+
+    private AtMention plugin;
+
+    public AsyncChatListener(AtMention plugin) {
+        this.plugin = plugin;
+    }
 
     @EventHandler(priority = EventPriority.HIGHEST)
     public void onMentionChat(AsyncPlayerChatEvent e) {
@@ -64,7 +71,9 @@ public class AsyncChatListener implements Listener {
             );
         }
 
-        TextComponent format = new TextComponent(e.getFormat().substring(0, e.getFormat().indexOf("%2$s")).replace("%1$s", e.getPlayer().getDisplayName()));
+        String prefix = ChatColor.translateAlternateColorCodes('&', plugin.getChat().getPlayerPrefix(e.getPlayer()));
+
+        TextComponent format = new TextComponent(e.getFormat().substring(0, e.getFormat().indexOf("%2$s")).replace("%1$s", prefix + e.getPlayer().getDisplayName()));
 
         TextComponent finalMessage = new TextComponent(
                 format,
